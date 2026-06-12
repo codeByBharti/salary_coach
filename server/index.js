@@ -26,6 +26,11 @@ app.use('/api/salary', salaryRoutes);
 app.use('/api/trending', trendingRoutes);
 app.use('/api/auth', authRoutes);
 
+// Root welcome endpoint
+app.get('/', (req, res) => {
+  res.send('Salary Coach API is running...');
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date() });
