@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #130608;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #130608;
+  color: #F0FDF4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+input, textarea {
+  color: #ffffff !important;
+}
+
+button {
+  color: inherit;
+}
+
+select {
+  background-color: #1F0E0E !important;
+  color: #F0FDF4 !important;
+  border-color: #F87171 !important;
+}
+option {
+  background-color: #1F0E0E !important;
+  color: #F0FDF4 !important;
+}
+
+/* Premium Green Neon Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #130608;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #F87171, #FB923C);
+  border-radius: 99px;
+  border: 2px solid #130608;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FECACA, #67E8F9);
+}
+
+/* Neon Glow Utilities — Green Palette */
+.neon-glow-green {
+  box-shadow: 0 0 28px rgba(74, 222, 128, 0.45), inset 0 0 14px rgba(74, 222, 128, 0.15);
+}
+.neon-glow-lime {
+  box-shadow: 0 0 28px rgba(163, 230, 53, 0.45), inset 0 0 14px rgba(163, 230, 53, 0.15);
+}
+.neon-glow-cyan {
+  box-shadow: 0 0 28px rgba(34, 211, 238, 0.45), inset 0 0 14px rgba(34, 211, 238, 0.15);
+}
+.neon-glow-teal {
+  box-shadow: 0 0 28px rgba(20, 184, 166, 0.45), inset 0 0 14px rgba(20, 184, 166, 0.15);
+}
+.neon-glow-emerald {
+  box-shadow: 0 0 28px rgba(52, 211, 153, 0.45), inset 0 0 14px rgba(52, 211, 153, 0.15);
+}
+
+/* Text gradient utility */
+.text-gradient-green {
+  background: linear-gradient(135deg, #F87171 0%, #FB923C 50%, #FB7185 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating orb animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-15px) scale(1.05); }
+}
+.floating-orb {
+  animation: float 8s ease-in-out infinite;
+}
+.floating-orb-delay {
+  animation: float 10s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Pulsing live dot */
+@keyframes livePulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6); }
+  50% { opacity: 0.6; box-shadow: 0 0 0 5px rgba(74, 222, 128, 0); }
+}
+.live-dot {
+  animation: livePulse 2s ease-in-out infinite;
+}
