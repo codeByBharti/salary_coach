@@ -42,7 +42,7 @@ const EDUCATION_OPTIONS = [
 ];
 
 const Label = ({ children, required }) => (
-  <label className="block text-[13px] font-[800] text-slate-300 mb-[8px] uppercase tracking-[0.08em]">
+  <label className="block text-[13px] font-[800] text-[#CBD5E1] mb-[8px] uppercase tracking-[0.08em]">
     {children} {required && <span className="text-[#F87171] font-[800]">*</span>}
   </label>
 );
@@ -176,7 +176,7 @@ export default function SalaryForm() {
           ANALYZE YOUR MARKET VALUE
         </motion.h2>
         <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
-          className="text-[17px] text-[#FECACA]/75 font-[500]">
+          className="text-[17px] text-[#CBD5E1] font-[500]">
           Get your salary range and negotiation script in 30 seconds
         </motion.p>
       </div>
@@ -205,7 +205,7 @@ export default function SalaryForm() {
                 onFocus={() => setIsRoleDropdownOpen(true)}
                 maxLength={50}
               />
-              <span className="absolute right-[16px] top-1/2 -translate-y-1/2 text-[11px] font-[700] text-[#FECACA]/30 pointer-events-none">
+              <span className="absolute right-[16px] top-1/2 -translate-y-1/2 text-[11px] font-[700] text-[#CBD5E1] pointer-events-none">
                 {roleSearch.length}/50
               </span>
               <AnimatePresence>
@@ -254,7 +254,7 @@ export default function SalaryForm() {
             </div>
             {suggestedSkills.length > 0 && (
               <div className="mt-[10px] flex flex-wrap items-center gap-[6px]">
-                <span className="text-[11px] font-[800] text-[#FECACA]/40 uppercase tracking-wide">Suggested:</span>
+                <span className="text-[11px] font-[800] text-[#CBD5E1] uppercase tracking-wide">Suggested:</span>
                 {suggestedSkills.map(s => (
                   <button key={s} type="button" onClick={() => addSkill(s)}
                     className="text-[12px] font-[700] bg-[#2B1212] border border-[#F87171]/20 text-white px-[10px] py-[4px] rounded-[8px] hover:bg-[#F87171]/20 hover:text-white hover:border-[#F87171]/40 transition-all"
@@ -272,7 +272,7 @@ export default function SalaryForm() {
             <Label>Years of Experience</Label>
             <div className="bg-[#2B1212]/60 border border-[#F87171]/25 rounded-[12px] px-[20px] py-[16px]">
               <div className="flex justify-between items-center mb-[12px]">
-                <span className="text-[13px] font-[700] text-[#FECACA]/60">Experience Level</span>
+                <span className="text-[13px] font-[700] text-[#CBD5E1]">Experience Level</span>
                 <span className="text-[16px] font-[900] text-transparent bg-clip-text bg-gradient-to-r from-[#F87171] to-[#FB7185]">
                   {experience === 0 ? 'Fresher 🎓' : experience === 0.5 ? '6 Months' : experience === 1 ? '1 Year' : `${experience} Years`}
                 </span>
@@ -280,7 +280,7 @@ export default function SalaryForm() {
               <input type="range" min="0" max="20" step="0.5" value={experience}
                 onChange={(e) => setExperience(parseFloat(e.target.value))}
                 className="w-full accent-[#F87171]" />
-              <div className="flex justify-between text-[11px] font-[700] text-[#FECACA]/30 mt-[8px]">
+              <div className="flex justify-between text-[11px] font-[700] text-[#CBD5E1] mt-[8px]">
                 <span>Fresher</span><span>10 Years</span><span>20+ Years</span>
               </div>
             </div>
@@ -297,10 +297,10 @@ export default function SalaryForm() {
                 placeholder="e.g. 1200000"
                 value={currentSalary}
                 onChange={(e) => setCurrentSalary(e.target.value)} />
-              <span className="absolute right-[16px] text-[12px] font-[700] text-[#FECACA]/40 pointer-events-none whitespace-nowrap">/ year</span>
+              <span className="absolute right-[16px] text-[12px] font-[700] text-[#CBD5E1] pointer-events-none whitespace-nowrap">/ year</span>
             </div>
             <div className="flex justify-between items-center mt-[6px]">
-              <span className="text-[12px] text-[#FECACA]/40">Enter 0 if you're a fresher</span>
+              <span className="text-[12px] text-[#CBD5E1]">Enter 0 if you're a fresher</span>
               {currentSalary && parseFloat(currentSalary) > 0 && (
                 <span className="text-[12px] font-[800] text-[#F87171]">{formatSalary(parseFloat(currentSalary))}</span>
               )}
@@ -344,7 +344,7 @@ export default function SalaryForm() {
                 >
                   <span className="text-[26px]">{type.icon}</span>
                   <span className="text-[13px] font-[800] text-white">{type.title}</span>
-                  <span className="text-[11px] text-[#FECACA]/70 font-[600]">{type.desc}</span>
+                  <span className="text-[11px] text-[#CBD5E1] font-[600]">{type.desc}</span>
                 </button>
               ))}
             </div>
@@ -357,7 +357,7 @@ export default function SalaryForm() {
               <button
                 type="button"
                 onClick={() => setIsEduDropdownOpen(prev => !prev)}
-                className={`${inputBase} text-left flex items-center justify-between pr-[44px] ${!education ? 'text-[#FECACA]/30' : 'text-white'}`}
+                className={`${inputBase} text-left flex items-center justify-between pr-[44px] ${!education ? 'text-[#64748B]' : 'text-white'}`}
                 style={{ color: education ? '#ffffff' : undefined }}
               >
                 <span style={{ color: education ? '#ffffff' : undefined }}>{education || 'Select your education'}</span>
@@ -424,7 +424,7 @@ export default function SalaryForm() {
                 </div>
               </div>
               <h3 className="text-[20px] font-[800] text-white mb-[6px] uppercase tracking-tight">Analyzing Your Market</h3>
-              <p className="text-[14px] text-[#FECACA]/70 mb-[24px]">AI is crunching real-time tech benchmarks...</p>
+              <p className="text-[14px] text-[#374151] mb-[24px]">AI is crunching real-time tech benchmarks...</p>
               <div className="flex flex-col gap-[10px] text-left">
                 {['Scanning live market benchmarks...', 'Feeding your profile to AI...', 'Crafting negotiation script...', 'Preparing your report...'].map((step, idx) => (
                   <div key={idx} className="flex items-center gap-[12px]">
@@ -433,7 +433,7 @@ export default function SalaryForm() {
                         : loadingStep === idx ? <span className="w-[8px] h-[8px] rounded-full bg-[#F87171] animate-ping inline-block" />
                         : <span className="w-[6px] h-[6px] rounded-full bg-[#2B1212] inline-block" />}
                     </div>
-                    <span className={`text-[14px] transition-colors ${loadingStep === idx ? 'text-white font-[600]' : loadingStep > idx ? 'text-[#FECACA]/50' : 'text-[#FECACA]/30'}`}>
+                    <span className={`text-[14px] transition-colors ${loadingStep === idx ? 'text-white font-[600]' : loadingStep > idx ? 'text-[#CBD5E1]' : 'text-[#64748B]'}`}>
                       {step}
                     </span>
                   </div>

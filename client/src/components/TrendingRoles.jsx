@@ -108,9 +108,9 @@ const TrendingRoles = React.memo(() => {
                   </div>
 
                   <div className="flex flex-col gap-[4px]">
-                    <div className="text-[11px] text-[#FECACA]/40 font-[700]">{item.totalSearches.toLocaleString()} searches</div>
+                    <div className="text-[11px] text-[#CBD5E1] font-[700]">{item.totalSearches.toLocaleString()} searches</div>
                     {item.topCity && (
-                      <div className="flex items-center gap-[4px] text-[11px] text-[#FECACA]/40 font-[700]">
+                      <div className="flex items-center gap-[4px] text-[11px] text-[#CBD5E1] font-[700]">
                         <MapPin size={10} className="text-[#FB7185]" />
                         {item.topCity}
                       </div>

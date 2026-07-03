@@ -1,0 +1,8 @@
+{
+  "name": "salary-coach-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx -y concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\""
+  }
+}

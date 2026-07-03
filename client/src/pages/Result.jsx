@@ -19,7 +19,7 @@ const CopyBtn = ({ text, label = 'Copy' }) => {
   return (
     <button onClick={handleCopy}
       className={`absolute top-[12px] right-[12px] flex items-center gap-[5px] rounded-[8px] px-[10px] py-[5px] text-[11px] font-[800] cursor-pointer transition-all border uppercase tracking-wider ${
-        copied ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400' : 'bg-[#2B1212] border-[#F87171]/25 text-[#FECACA]/60 hover:text-white hover:border-[#F87171]'
+        copied ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400' : 'bg-[#2B1212] border-[#F87171]/25 text-[#CBD5E1] hover:text-white hover:border-[#F87171]'
       }`}>
       {copied ? <><Check size={11} /> Copied!</> : <><Copy size={11} /> {label}</>}
     </button>
@@ -49,16 +49,16 @@ const CardTitle = ({ icon, children }) => (
 );
 
 const ScriptLabel = ({ children }) => (
-  <p className="text-[11px] font-[800] tracking-[0.15em] uppercase text-[#FECACA]/40 mb-[8px]">{children}</p>
+  <p className="text-[11px] font-[800] tracking-[0.15em] uppercase text-[#CBD5E1] mb-[8px]">{children}</p>
 );
 
 const ScriptBox = ({ text, accentColor, bgColor, label }) => (
   <div className="mb-[14px]">
     <ScriptLabel>{label}</ScriptLabel>
-    <div className="relative rounded-[12px] px-[20px] py-[16px] text-[14px] text-slate-200 leading-[1.8] font-[600] border-[1.5px]"
+    <div className="relative rounded-[12px] px-[20px] py-[16px] text-[14px] text-[#CBD5E1] leading-[1.8] font-[600] border-[1.5px]"
       style={{ background: bgColor, borderColor: `${accentColor}28` }}>
       <CopyBtn text={text} />
-      <span className="text-slate-300 italic">"{text}"</span>
+      <span className="text-[#CBD5E1] italic">"{text}"</span>
     </div>
   </div>
 );
@@ -121,7 +121,7 @@ export default function Result() {
     <div className="min-h-screen flex flex-col items-center justify-center px-[24px] text-center bg-[#130608]">
       <div className="text-[48px] mb-[16px]">😕</div>
       <h2 className="text-[24px] font-[900] text-white mb-[8px] uppercase tracking-tight">Result Not Found</h2>
-      <p className="text-[#FECACA]/50 mb-[28px]">We couldn't find the analysis you're looking for.</p>
+      <p className="text-[#CBD5E1] mb-[28px]">We couldn't find the analysis you're looking for.</p>
       <Link to="/" className="inline-flex items-center gap-[8px] px-[24px] py-[12px] rounded-[12px] bg-gradient-to-r from-[#F87171] to-[#FB923C] text-[#130608] font-[900] shadow-[0_0_18px_rgba(248,113,113,0.35)] hover:shadow-[0_0_28px_rgba(248,113,113,0.5)] hover:-translate-y-[2px] transition-all uppercase">
         <ArrowLeft size={16} /> Analyze Again
       </Link>
@@ -146,7 +146,7 @@ export default function Result() {
         style={{ backgroundImage: 'radial-gradient(#F87171 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
       <div className="max-w-[700px] mx-auto">
-        <Link to="/" className="inline-flex items-center gap-[6px] text-[13px] font-[700] text-[#FECACA]/40 hover:text-[#F87171] transition-colors mb-[22px] uppercase tracking-wider">
+        <Link to="/" className="inline-flex items-center gap-[6px] text-[13px] font-[700] text-[#CBD5E1] hover:text-[#F87171] transition-colors mb-[22px] uppercase tracking-wider">
           <ArrowLeft size={16} /> Analyze Another Role
         </Link>
 
@@ -189,9 +189,9 @@ export default function Result() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
           <Card>
             <CardTitle icon="📊">Market Intelligence</CardTitle>
-            <div className="bg-[#FB923C]/8 border border-[#FB923C]/25 rounded-[12px] px-[18px] py-[14px] text-[14px] text-cyan-200 leading-[1.8] mb-[12px]">{marketInsight}</div>
+            <div className="bg-[#FB923C]/8 border border-[#FB923C]/25 rounded-[12px] px-[18px] py-[14px] text-[14px] text-[#CBD5E1] leading-[1.8] mb-[12px]">{marketInsight}</div>
             {redFlags && (
-              <div className="bg-amber-400/8 border border-amber-400/25 rounded-[12px] px-[18px] py-[14px] text-[14px] text-amber-300 leading-[1.8]">
+              <div className="bg-amber-400/8 border border-amber-400/25 rounded-[12px] px-[18px] py-[14px] text-[14px] text-[#CBD5E1] leading-[1.8]">
                 <span className="font-[800] text-amber-400">⚠ Watch out: </span>{redFlags}
               </div>
             )}
@@ -215,7 +215,7 @@ export default function Result() {
                 <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden">
                   <div className="relative mt-[10px]">
                     <CopyBtn text={negotiationScript.emailTemplate} label="Copy Email" />
-                    <pre className="bg-[#130608] border border-[#F87171]/22 rounded-[12px] px-[18px] py-[18px] text-[12px] font-mono text-slate-300 leading-[1.9] whitespace-pre-wrap overflow-x-auto">
+                    <pre className="bg-[#130608] border border-[#F87171]/22 rounded-[12px] px-[18px] py-[18px] text-[12px] font-mono text-[#CBD5E1] leading-[1.9] whitespace-pre-wrap overflow-x-auto">
                       {negotiationScript.emailTemplate}
                     </pre>
                   </div>
@@ -239,7 +239,7 @@ export default function Result() {
                       <div className={`w-[22px] h-[22px] rounded-full border-2 shrink-0 flex items-center justify-center transition-all ${checked ? 'bg-[#F87171] border-[#F87171]' : 'border-[#F87171]/30'}`}>
                         {checked && <Check size={13} strokeWidth={3} className="text-[#130608]" />}
                       </div>
-                      <span className={`text-[14px] font-[600] transition-all ${checked ? 'line-through text-slate-500' : 'text-slate-200'}`}>{item}</span>
+                      <span className={`text-[14px] font-[600] transition-all ${checked ? 'line-through text-[#CBD5E1]/40' : 'text-[#CBD5E1]'}`}>{item}</span>
                     </div>
                   );
                 })}

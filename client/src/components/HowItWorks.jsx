@@ -63,7 +63,7 @@ export default function HowItWorks() {
             </span>
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
-            className="text-[17px] text-[#FECACA]/50 max-w-[500px] mx-auto font-[500]">
+            className="text-[17px] text-[#CBD5E1] max-w-[500px] mx-auto font-[500]">
             No fluff, no sign-up, no credit card. Just results in seconds.
           </motion.p>
         </div>
@@ -73,30 +73,84 @@ export default function HowItWorks() {
           style={{ background: 'linear-gradient(90deg, #F87171, #FB923C, #FB7185)' }} />
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] relative z-10">
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15, duration: 0.5 }}
-              className={`relative bg-[#1F0E0E]/70 border-[2px] ${step.borderColor} ${step.hoverBorder} rounded-[24px] p-[40px] text-center group hover:-translate-y-[8px] transition-all duration-300 ${step.glowClass} overflow-hidden`}
-            >
-              {/* Number watermark */}
-              <div className={`absolute -right-[10px] -top-[10px] text-[130px] font-[900] leading-none ${step.numberColor} pointer-events-none select-none`}>
-                {step.number}
-              </div>
+        <div 
+          className="steps-container relative z-10"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '20px',
+            maxWidth: '900px',
+            margin: '0 auto',
+          }}
+        >
+          <style>{`
+            @media (max-width: 768px) {
+              .steps-container {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `}</style>
+          {steps.map((step, index) => {
+            let borderStyle = '';
+            let boxShadowStyle = '';
+            if (index === 0) {
+              borderStyle = '1px solid rgba(248,113,113,0.5)';
+              boxShadowStyle = '0 0 20px rgba(248,113,113,0.1), inset 0 0 20px rgba(248,113,113,0.03)';
+            } else if (index === 1) {
+              borderStyle = '1px solid rgba(251,146,60,0.5)';
+              boxShadowStyle = '0 0 20px rgba(251,146,60,0.1), inset 0 0 20px rgba(251,146,60,0.03)';
+            } else if (index === 2) {
+              borderStyle = '1px solid rgba(251,113,133,0.5)';
+              boxShadowStyle = '0 0 20px rgba(251,113,133,0.1), inset 0 0 20px rgba(251,113,133,0.03)';
+            }
 
-              {/* Icon circle */}
-              <div className={`w-[72px] h-[72px] rounded-full ${step.iconBg} border flex items-center justify-center mx-auto mb-[22px] text-[32px] ${step.iconGlow} transition-all duration-300`}>
-                {step.icon}
-              </div>
+            return (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15, duration: 0.5 }}
+                className="relative rounded-[16px] group hover:-translate-y-[8px] transition-all duration-300 overflow-hidden"
+                style={{
+                  padding: '24px',
+                  textAlign: 'center',
+                  marginBottom: '0',
+                  border: borderStyle,
+                  boxShadow: boxShadowStyle,
+                  background: 'rgba(255,255,255,0.03)',
+                }}
+              >
+                {/* Number watermark */}
+                <div className={`absolute -right-[10px] -top-[10px] text-[130px] font-[900] leading-none ${step.numberColor} pointer-events-none select-none`}>
+                  {step.number}
+                </div>
 
-              <h3 className="text-[19px] font-[900] text-white mb-[12px] uppercase tracking-tight">{step.title}</h3>
-              <p className="text-[14px] text-[#FECACA]/55 leading-[1.75] font-[500]">{step.desc}</p>
-            </motion.div>
-          ))}
+                {/* Icon circle */}
+                <div className={`w-[72px] h-[72px] rounded-full ${step.iconBg} border flex items-center justify-center mx-auto mb-[22px] text-[32px] ${step.iconGlow} transition-all duration-300`}>
+                  {step.icon}
+                </div>
+
+                <h3 
+                  className="text-[19px] mb-[12px] uppercase tracking-tight"
+                  style={{
+                    color: 'white',
+                    fontWeight: 700,
+                  }}
+                >
+                  {step.title}
+                </h3>
+                <p 
+                  className="text-[14px] leading-[1.75] font-[500]"
+                  style={{
+                    color: 'rgba(255,255,255,0.75)',
+                  }}
+                >
+                  {step.desc}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
